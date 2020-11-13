@@ -1,9 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DELI-VERY</title>
-    </head>
-    <body>
-        <h1>Hello World!!!</h1>
-    </body>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script src="js/js_script.js" defer></script>
+    <!-- Saker från map.html, början -->
+    <script src="/vue/vue.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <!-- Saker från map.html, slut -->
+    <script src="js/vue_script.js" defer></script>
+    <title>Beställningssida</title>
+</head>
+<body>
+    <header>
+        <img src="https://storage.googleapis.com/orchestra-cafe-7jp1kqsp/uploads/2019/08/6898d17b-snus-vm-1024x576.jpg">
+        <h1>Välkommen till snusshoppen!</h1>
+    </header>
+    <main id="main-wrapper">
+        <section id="snuschoice">
+            <h2>Välj snus</h2>
+            <p>Vi har ett brett sortiment av olika snussorter att välja mellan.</p>
+            <div class= wrapper id="wrapper">
+            </div>
+        </section>
+        <section id="details">
+            <h2>Skriv in dina adressuppgifter</h2>
+            <p>Var ska det svarta guldet levereras?</p>
+            <p>
+                <label for="fullname">Namn</label><br>
+                <input type="text" id="fullname" name="fn" required="required" placeholder="Namn">
+            </p>
+            <p>
+                <label for="email">Mailadress</label><br>
+                <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+            </p>
+            <p>
+                <label for="paymentmethod">Betalmetod</label><br>
+                <select id="paymentmethod" name="pm">
+                    <option>Swish</option>
+                    <option>Kontokort</option>
+                    <option>Klarna</option>
+                    <option>Kontantbetalning på plats</option>
+                </select>
+            </p>
+            <p>
+                <label for="gender">Kön</label><br>
+                <input type="radio" id="man" name="g" checked="checked" value="Man">
+                <label for="man">Man</label><br>
+                <input type="radio" id="woman" name="g" value="Kvinna">
+                <label for="woman">Kvinna</label><br>
+                <input type="radio" id="nonbinary" name="g" value="Ickebinär">
+                <label for="nonbinary">Ickebinär</label><br>
+                <input type="radio" id="notspecified" name="g" value="Inte specificerat">
+                <label for="notspecified">Inte speficicerat</label><br>
+            </p>
+            <!-- Saker från map.html, början -->
+            <div class="view-box">
+                <div id="dots" v-on:click="displayOrder">
+                    <div
+                    v-for="(order, key) in order"
+                    v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                    {{key}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Saker från map.html, slut -->
+    <div>
+        <div id="order-button">
+            <button type="submit" v-on:click="addOrder"><img src="/img/Ettan.png"> Beställ</button>
+        </div>
+        <div id="false-details" v-if="theMessage !== false">
+            {{ theMessage }}
+        </div>
+        <div div id="order-response" v-if="buttonClicked">
+            <p>Orderbekräftelse</p>
+            <div v-for="detail in detailsPrint">
+                {{detail}}
+            </div>
+        </div>
+    </div>
+</main>
+<hr>
+<br>
+<footer>Tack för att du stöttar din lokala snusshop!</footer>
+<br>
+</body>
 </html>

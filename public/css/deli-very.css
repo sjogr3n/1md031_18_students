@@ -41,3 +41,12 @@ body {
 	background: rgba(255,255,255, 0.5);
 	padding: 1em;
 }
+
+#orderedSnus {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#details {
+	font-style: italic;
+}
