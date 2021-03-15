@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <script src="js/js_script.js"></script>
+        <script src="https://vuejs.org/js/vue.js"></script>
+        <script src="js/vue_script.js"></script>
+        <title>Görgo beställningssida</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <main>
+            <header>
+                <img src="https://storage.googleapis.com/orchestra-cafe-7jp1kqsp/uploads/2019/08/6898d17b-snus-vm-1024x576.jpg">
+                <h1>Välkommen till snusshoppen!</h1>
+            </header>
+            <section id="snusval">
+                <h2>Välj snus</h2>
+                <p>Vi har ett brett sortiment av olika snussorter att välja mellan.</p>
+                <div class="wrapper">
+                    <div>
+                        <th>General Portion</th>
+                        <img src="https://media.snusbolaget.se/snusbolaget/images/swm-879-2019-08-19-101727496/555/555/0/general-minisnus.png" width="250">
+                        <ul>
+                            <li><span id="portion" class="snustyp">Portionssnus</span></li>
+                            <li>Smak av <span class="smak">bergamott</span></li>
+                            <li>Storsäljare</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <th>Ettan lös</th>
+                        <img src="https://media.snusbolaget.se/snusbolaget/images/swm-804-2017-04-11-091924944/555/555/0/ettan-lossnus.png" width="250">
+                        <ul>
+                            <li><span id="loose" class="snustyp">Lössnus</span></li>
+                            <li>Smak av <span class="smak">rökig arom</span></li>
+                            <li>Sedan 1822</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <th>Lundgrens Skåne Stark</th>
+                        <img src="https://media.snusbolaget.se/snusbolaget/images/302183-g-2020-01-17-140103285/555/555/0/lundgrens-skane-stark-vit-portion.png" width="250">
+                        <ul>
+                            <li><span id="whiteportion" class="snustyp">Vitt portionssnus</span></li>
+                            <li>Smak av <span class="smak">skogsbär</span></li>
+                            <li>Extra stark</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="uppgifter">
+                <h2>Skriv in dina adressuppgifter</h2>
+                <p>Var ska det svarta guldet levereras?</p>
+                <p>
+                    <label for="fullname">Namn</label><br>
+                    <input type="text" id="fullname" name="fn" required="required" placeholder="Namn">
+                </p>
+                <p>
+                    <label for="email">Mailadress</label><br>
+                    <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+                </p>
+                <p>
+                    <label for="street">Gata</label><br>
+                    <input type="text" id="street" name="g" placeholder="Gata">
+                </p>
+                <p>
+                    <label for="streetnumber">Gatunummer</label><br>
+                    <input type="number" id="streetnumber" name="gn" placeholder="Gatunummer">
+                </p>
+                <p>
+                    <label for="paymentmethod">Betalmetod</label><br>
+                    <select id="paymentmethod" name="pm">
+                        <option>Swish</option>
+                        <option>Kontokort</option>
+                        <option>Klarna</option>
+                        <option>Kontantbetalning på plats</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="gender">Kön</label><br>
+                    <input type="radio" id="man" name="g" checked="checked">
+                    <label for="man">Man</label><br>
+                    <input type="radio" id="woman" name="g">
+                    <label for="woman">Kvinna</label><br>
+                    <input type="radio" id="nonbinary" name="g">
+                    <label for="nonbinary">Ickebinär</label><br>
+                    <input type="radio" id="notspecified" name="g">
+                    <label for="notspecified">Inte speficicerat</label><br>
+                </p>
+                <p>
+                    <button type="submit" id="order"><img src="/img/Ettan.png" width=40px> Beställ</button>
+                </p>
+            </section>
+        </main>
+        <hr>
+        <footer>Tack för att du stöttar din lokala snusshop!</footer>
+    </body>
+</html>
